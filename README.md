@@ -77,8 +77,11 @@ country_txt_Pakistan | natlty1_txt_Somalia | natlty1_txt_India | natlty1_txt_Pak
 <img src="https://github.com/michelleweii/GTD-mathematical-modeling/blob/master/数学建模git上传/时间序列预测框架.PNG" width="300" alt="note3">
 
 1.一个分段的线性或逻辑增长曲线趋势。Prophet通过提取数据中的转变点，自动检测趋势变化。
+
 2.一个按年的周期组建，使得傅里叶级数建模而成。
+
 3．一个按周的周期组建，使得虚拟变量建模而成。
+
 4. 用户设置重要节日表。
 
 
@@ -94,5 +97,6 @@ country_txt_Pakistan | natlty1_txt_Somalia | natlty1_txt_India | natlty1_txt_Pak
 （2） 自然语言处理是人工智能最早的研究领域之一，通过对附件1数据分析得知有summary和country_txt两个特征。利用Seq2Seq模型对这两个属性进行数学建模。我们所要解决的问题是根据summary内容预测出country_txt中的内容。在数据分析领域，数据集严重影响着分析结果，每一条数据都很珍贵，如果country_txt内容丢失，我们完全可以从summary中预测出结果，而不必删除缺失值的数据。
 
 <img src="https://github.com/michelleweii/GTD-mathematical-modeling/blob/master/数学建模git上传/seq2seq.PNG" width="500" alt="note3">
+
 <img src="https://github.com/michelleweii/GTD-mathematical-modeling/blob/master/数学建模git上传/文本预测.PNG" width="500" alt="note3">
 
