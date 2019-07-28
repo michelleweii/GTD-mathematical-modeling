@@ -74,6 +74,7 @@ K-Means是对距离聚类中的一种方法，通过计算距离的大小计算�
 因此，结合本任务的具体要求随机森林的训练过程可以总结如下。
 
 <img src="https://github.com/michelleweii/GTD-mathematical-modeling/blob/master/数学建模git上传/RF.PNG" width="500" alt="note3">
+
 - k近邻（k-Nearest Neighbor，简称kNN）是一种基于某种距离度量对训练样本进行分类的算法。由于按照距离对样本进行度量，所以可以找出本任务预测恐怖袭事件的嫌疑人。具体解题思路是：在表2给定的10个测试样本中，根据度量距离找出在特征空间中的5个最相似样本，然后根据找到的这5个最邻近样本的信息进行分类预测，在分类预测过程中，通常遵循“投票法则”，即在这10个样本中出现最多的类别作为预测结果。通过sk-learn中的predict_proba函数可以输出所有类别的预测结果，我们按照降序顺序完成对表2的填写。
 
 <img src="https://github.com/michelleweii/GTD-mathematical-modeling/blob/master/数学建模git上传/knn-1.PNG" width="500" alt="note3">
@@ -104,30 +105,24 @@ K-Means是对距离聚类中的一种方法，通过计算距离的大小计算�
 以下是对伊拉克的恐怖袭击事件和节假日之间创建时间序列模型求解结果。
 
 <img src="https://github.com/michelleweii/GTD-mathematical-modeling/blob/master/数学建模git上传/assignment3/图%204-7%20伊拉克每日所遭受的恐怖袭击数量.png" width="800" alt="note3">
-
 图 伊拉克每日所遭受的恐怖袭击数量
 
 <img src="https://github.com/michelleweii/GTD-mathematical-modeling/blob/master/数学建模git上传/assignment3/图%204-8%20伊拉克每日所遭受的恐怖袭击数量——平滑后.png" width="800" alt="note3">
-
 图 伊拉克每日所遭受的恐怖袭击数量——平滑后
 
 <img src="https://github.com/michelleweii/GTD-mathematical-modeling/blob/master/数学建模git上传/assignment3/图%204-9%20伊拉克每周所遭受的恐怖袭击数量.png" width="800" alt="note3">
-
 图 伊拉克每周所遭受的恐怖袭击数量
 
 <img src="https://github.com/michelleweii/GTD-mathematical-modeling/blob/master/数学建模git上传/assignment3/图%204-10%20伊拉克每月所遭受的恐怖袭击数量.png" width="800" alt="note3">
-
 图 伊拉克每月所遭受的恐怖袭击数量
 
 <img src="https://github.com/michelleweii/GTD-mathematical-modeling/blob/master/数学建模git上传/assignment3/图%204-11%20预测%202018%20年伊拉克地区恐怖袭击趋势.png" width="800" alt="note3">
-
 图 预测2018年伊拉克地区恐怖袭击趋势
 
 其中蓝色线为预测结果，黑色点为原数据点。将2018年伊拉克发生恐怖袭击的次数的预测图进行放大，可以看到在2018年3、6月份会有明显上升，而在5、10月份之后会有明显的下降，模型得出预测趋势大致与接下来趋势分析中的季节性趋势一致。
 对伊拉克地区近三年来发生的恐怖袭击事件进行了季节性分析和趋势分析。
 
 <img src="https://github.com/michelleweii/GTD-mathematical-modeling/blob/master/数学建模git上传/assignment3/图%204-12%20伊拉克恐怖袭击趋势图.png" width="800" alt="note3">
-
 图 伊拉克恐怖袭击趋势图
 
 由于Prophet使用加性模型，y轴代表相对于趋势的绝对变化。从表中我们得知，6月的飙升发生在斋月结束之前，12月的跳跃发生在默罕默德诞辰之后。9月份的下降发生在古尔邦节和伊斯兰新年附近。与此同时，周五发生的攻击次数较少，与穆斯林星期五祈祷相对应。总体遭到恐怖袭击趋势呈下降状态，分析得出的预测趋势与上述趋势分析中显示的季节性趋势一致。
@@ -141,10 +136,12 @@ K-Means是对距离聚类中的一种方法，通过计算距离的大小计算�
 
 图片显示爆炸袭击，枪炮，以及不知具体武器的攻击类型占了前三位。所以根据显示结果，利用附件1的数据建立了武器分类模型，以便预测出来武器攻击类型以做好未来针对该武器类型的防范。
 - 支持向量机
+
 在武器分类问题中，选定的特征为：'country_txt', 'region_txt', 'attacktype1_txt', 'nkill','nwound'。预测标签为’weapontype1’。给定训练样本集D={(x_i,y_i ),i=1,2,⋯,N},x∈R^d,y∈{±1}，x_i为第i个特征向量，y_i为x_i的类标记。利用SVM分类器对武器类型进行分类，实验准确率为0.8895805739514349
 
 （2） 自然语言处理是人工智能最早的研究领域之一，通过对附件1数据分析得知有summary和country_txt两个特征。利用Seq2Seq模型对这两个属性进行数学建模。我们所要解决的问题是根据summary内容预测出country_txt中的内容。在数据分析领域，数据集严重影响着分析结果，每一条数据都很珍贵，如果country_txt内容丢失，我们完全可以从summary中预测出结果，而不必删除缺失值的数据。
 - Seq2Seq模型
+
 Seq2Seq模型的基本思想非常简单，通过使用一个循环神经网络读取输入句子，将整个句子的信息压缩到一个固定维度的编码中；再使用另一个循环神经网络读取这个编码，将其解压为目标语言的一个句子。这两个循环神经网络分别称为编码器（Encoder）和解码器(Decoder)，这个模型也称为Encoder-Decoder模型。
 编码器部分的结构与语言模型几乎完全相同：输入为单词的词向量，输出为softmax层产生的单词概率。
 解码器与编码器一样拥有词向量层和循环神经网络，在训练过程中，编码器顺序读入每个单词的词向量，然后将最终的隐藏状态复制到解码器作为初始状态。解码器的第一个输入是特殊的<Go>字符，每一步预测的单词是训练数据的目标句子，预测序列的最后一个单词是与语言模型相同的<EOS>(End-Of-Sentence)字符。在解码过程中，每一步预测的单词中概率最大的单词被选为这一步的输出，并复制到下一步的输入中。
